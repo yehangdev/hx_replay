@@ -1,0 +1,25 @@
+server:
+  port: 8093
+  servlet:
+    context-path: /hx_replay
+
+spring:
+  application:
+    name: hx_replay
+  datasource:
+    replay:
+      url: ${REPLAY_DB_URL}
+      username: ${REPLAY_DB_USER}
+      password: ${REPLAY_DB_PASSWORD}
+  redis:
+    host: cache.meituan.com
+    port: 6379
+    client-name: hx_replay
+    username: admin
+    password: "2a6b837c5790285f0544442049425419a8f0796ccdbab5cd"
+    database: 0
+    timeout: 3000
+
+logging:
+  file:
+    name: /opt/sankuai/logs/hx_replay/replay.log
